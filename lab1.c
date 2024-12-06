@@ -7,7 +7,7 @@ pthread_mutex_t lock = PTHREAD_MUTEX_INITIALIZER;
 int ready = 0;
 
 // Поставщик
-void provide() {
+void* provide(void* args) {
     while (1) {
         // Задержка в 1 секунду
         sleep(1);
@@ -29,7 +29,7 @@ void provide() {
 }
 
 // Потребитель
-void consume() {
+void* consume(void* args) {
     while (1) {
         pthread_mutex_lock(&lock);
 
