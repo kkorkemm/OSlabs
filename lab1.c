@@ -8,7 +8,7 @@ int ready = 0;
 
 // Поставщик
 void* provide(void* args) {
-    while (1) {
+    for(int i = 1; i < 10; i++) {
         // Задержка в 1 секунду
         sleep(1);
 
