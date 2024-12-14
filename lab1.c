@@ -50,15 +50,12 @@ void* consume(void* args) {
 int main() {
     pthread_t producer_thread, consumer_thread;
 
-    // Создаем потоки
     pthread_create(&producer_thread, NULL, provide, NULL);
     pthread_create(&consumer_thread, NULL, consume, NULL);
 
-    // Ждем завершения потоков (в данном случае, они бесконечные)
     pthread_join(producer_thread, NULL);
     pthread_join(consumer_thread, NULL);
 
-    // Освобождаем ресурсы
     pthread_mutex_destroy(&lock);
     pthread_cond_destroy(&cond1);
 
