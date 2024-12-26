@@ -22,8 +22,7 @@ static unsigned long calculate_minutes_since_titanic(void) {
         .tm_mday = 15, 
         .tm_hour = 2, 
         .tm_min = 20,
-        .tm_sec = 0,            
-        .tm_isdst = -1          // Автоматическое определение летнего времени
+        .tm_sec = 0
     };
 
     struct timespec64 now;
